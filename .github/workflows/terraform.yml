@@ -9,6 +9,7 @@ jobs:
   terraform:
     name: Terrafom Stack
     runs-on: ubuntu-latest
+    environment: stage
 
     steps:
 

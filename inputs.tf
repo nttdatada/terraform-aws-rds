@@ -3,6 +3,8 @@
 # Date: Seg 7 Mar 2022
 # Terraform Module - AWS RDS
 
+
+### AWS RDS ###
 variable "rds" {
 
     type = map(object({
@@ -42,4 +44,41 @@ variable "rds" {
     }))
 }
 
+
+### DB Parameter Group ###
+
+variable "enable_db_parameter_group" {
+
+    description = "Enable DB parameter group usage"
+    type        = false
+}
+
+variable "db_parameter_group_name" {
+
+    description = ""
+    type        = string
+}
+
+variable "db_parameter_group_name_prefix" {
+
+    description = ""
+    type        = string
+}
+
+
+variable "db_parameter_group_description" {
+
+    description = ""
+    type        = string
+}
+
+variable "de_parameter_group_parameters" {
+
+    description = ""
+    type = list(string)
+    default = []
+}
+
+
+### Tags ###
 variable "tags" {}

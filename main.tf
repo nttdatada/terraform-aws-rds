@@ -31,8 +31,8 @@ resource "aws_db_instance" "rds" {
     publicly_accessible     = each.value["publicly_accessible"]
 
     vpc_security_group_ids  = each.value["vpc_security_group_ids"] 
-    db_subnet_group_name    = each.value["db_subnet_group_name"]
-    parameter_group_name    = each.value["parameter_group_name"]
+    db_subnet_group_name    = var.db_subnet_group_name
+    parameter_group_name    = var.parameter_group_name
     apply_immediately       = each.value["apply_immediately"]
 
     monitoring_role_arn     = each.value["monitoring_role_arn"]
@@ -40,6 +40,7 @@ resource "aws_db_instance" "rds" {
     kms_key_id              = each.value["kms_key_id"]
  
     tags                    = var.tags
+
 }
 
 #################################

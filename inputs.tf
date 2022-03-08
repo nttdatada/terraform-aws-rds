@@ -50,7 +50,8 @@ variable "rds" {
 variable "enable_db_parameter_group" {
 
     description = "Enable DB parameter group usage"
-    type        = false
+    type        = bool
+    default     = false
 }
 
 variable "db_parameter_group_name" {

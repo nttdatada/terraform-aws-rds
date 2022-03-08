@@ -14,7 +14,7 @@ variable "rds" {
         identifier              = string
         instance_class          = string
 
-        name                    = string
+        db_name                    = string
         username                = string
         password                = string
 
@@ -50,7 +50,8 @@ variable "rds" {
 variable "enable_db_parameter_group" {
 
     description = "Enable DB parameter group usage"
-    type        = false
+    type        = bool
+    default     = false
 }
 
 variable "db_parameter_group_name" {
@@ -72,13 +73,18 @@ variable "db_parameter_group_description" {
     type        = string
 }
 
-variable "de_parameter_group_parameters" {
+variable "db_parameter_group_parameters" {
 
     description = ""
     type = list(string)
     default = []
 }
 
+variable "db_parameter_group_family" {
+
+    description = ""
+    type        = string
+}
 
 ### Tags ###
 variable "tags" {}

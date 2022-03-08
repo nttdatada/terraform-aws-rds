@@ -32,9 +32,6 @@ variable "rds" {
         publicly_accessible     = bool
         
         vpc_security_group_ids  = list(string)
-        db_subnet_group_name    = string
-        parameter_group_name    = string    
-
         apply_immediately       = bool
 
         monitoring_role_arn     = string
@@ -42,6 +39,16 @@ variable "rds" {
         kms_key_id              = string
                         
     }))
+}
+
+variable "db_subnet_group_name" {
+    description = ""
+    type = string
+}
+
+variable "parameter_group_name" {
+    description = ""
+    type = string
 }
 
 

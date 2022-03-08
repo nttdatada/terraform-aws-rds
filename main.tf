@@ -13,7 +13,7 @@ resource "aws_db_instance" "rds" {
     identifier              = each.value["identifier"]
     instance_class          = each.value["instance_class"]
 
-    name                    = each.value["name"]
+    name                    = each.value["db_name"]
     username                = each.value["username"]
     password                = each.value["password"]   
     allocated_storage       = each.value["allocated_storage"]

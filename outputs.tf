@@ -15,7 +15,7 @@ output "rds_hostname" {
 output "db_parameter_group" {
 
     description = "Name DB Parameter Group"
-    value = aws_db_parameter_group.db_parameter_group.name
+    value = values(aws_db_parameter_group.db_parameter_group)[*].name
 }
 
 #output "db_subnet_group_name" {

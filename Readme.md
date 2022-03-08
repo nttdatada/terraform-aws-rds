@@ -10,10 +10,18 @@
 # Module
 module "rds-example" {
 
-    source
+    source      = ""
 
     rds         = var.rds
     tags        = var.tags
+
+    # Enable db parameter group
+
+    enable_db_parameter_group       = false
+    db_parameter_group_name         = ""
+    db_parameter_group_parameters   = []
+    db_parameter_group_family       = ""
+
 } 
 
 
